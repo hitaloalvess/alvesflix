@@ -1,0 +1,54 @@
+.movieRow{
+    margin-bottom: 2rem;
+}
+
+.movieRow h2{
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    margin-left: 3rem;
+}
+.movieRow--list-area{
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0 3rem;
+}
+
+.movieRow--list{
+    transition: all .5s ease-in-out;
+}
+
+.movieRow .movieRow--list-area .button--left,
+.movieRow .movieRow--list-area .button--right{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    z-index: -1;
+    opacity: 0;
+    transition: all .4s ease-in;
+}
+.movieRow .movieRow--list-area .button--left svg,
+.movieRow .movieRow--list-area .button--right svg{
+    font-size: 3rem;
+}
+
+.movieRow .movieRow--list-area .button--left{
+    left: 0;
+}
+.movieRow .movieRow--list-area .button--right{
+    right: 0;
+}
+
+.movieRow .movieRow--list-area:hover .button--right,
+.movieRow .movieRow--list-area:hover .button--left{
+    z-index: 99;
+    opacity: 1;
+}
+
