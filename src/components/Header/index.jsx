@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 
 import './style.css';
 
+import logo from '../../assets/images/logo.svg';
+import avatar from '../../assets/images/avatar.svg';
 const Header = () => {
 
     useEffect( () => {
@@ -19,7 +21,12 @@ const Header = () => {
 
     return ( 
                 <header>
-                    <h3>MOVIEFLIX</h3>
+                    <div className="logo">
+                        <img src={logo} alt="logo alvesflix" />
+                    </div>
+                    <div className="avatar">
+                        <img src={avatar} alt="ícone avatar"/>
+                    </div>
                 </header> 
             );
 }
