@@ -19,6 +19,10 @@ html{
    --white: #fff;
    --green-light: #46d369;
    --grey: #999;
+   --grey-medium:#808080;
+   --blue-facebook: #0570e6;
+   --blue-linkedin:#0a66c2;
+   --pink-instagram:rgb(185,43,100);
 }
 
 .page{
