@@ -18,7 +18,8 @@
 }
 
 .featuredMovie--horizontal article{
-    width: 40%;
+    /* width: 40%; */
+    width: min(45rem, 85%);
     margin-left: 3rem;
     font-size: clamp(1.6rem, 2vw, 1.8rem);
 }
@@ -58,8 +59,8 @@
 .featuredMovie--horizontal article .buttons button{
     display: flex;
     align-items: center;
-    padding: 1.5rem 3rem;
-    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    padding: 1.5rem 2rem;
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
     font-weight: bold;
     border-radius: 6px;
     border: none;
@@ -77,4 +78,15 @@
 
 .featuredMovie--horizontal article .buttons button:hover{
     filter: brightness(1.4);
+}
+
+@media (max-width:767px) {
+    .featuredMovie--horizontal article .overview{
+        display: none;
+    }
+}
+@media (max-width:480px) {
+    .featuredMovie--horizontal{
+        background: transparent;
+    }
 }

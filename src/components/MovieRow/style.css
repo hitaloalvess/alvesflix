@@ -52,3 +52,11 @@
     opacity: 1;
 }
 
+
+@media (max-width:1024px) {
+    .movieRow .movieRow--list-area .button--left,
+    .movieRow .movieRow--list-area .button--right{
+        opacity: 1;
+        z-index: 99;
+    }
+}

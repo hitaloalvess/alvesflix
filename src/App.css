@@ -23,6 +23,7 @@ html{
    --blue-facebook: #0570e6;
    --blue-linkedin:#0a66c2;
    --pink-instagram:rgb(185,43,100);
+   --red:#d70717;
 }
 
 .page{
@@ -34,4 +35,17 @@ html{
 
 .content-genres{
   margin-top: -12rem;
+}
+
+/*BARRA DE ROLAGEM*/
+::-webkit-scrollbar{
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: var(--black);
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--red);
+  border-radius: 8px;
 }
