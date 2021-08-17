@@ -1,0 +1,19 @@
+.modal-container{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 9998;
+    overflow: auto;
+}
+
+.modal-container .modal-content{
+    width: min(40rem, 90%);
+    height: 150vh;
+    margin: auto;
+    background-color: chartreuse;
+    z-index: 9999;
+}

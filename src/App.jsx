@@ -5,6 +5,7 @@ import Header from './components/Header/index';
 import FeaturedMovie from './components/FeaturedMovie/index';
 import MovieRow from './components/MovieRow/index';
 import Footer from './components/Footer/index';
+import Modal from './components/Modal';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
     homeList();
   }, [])
   return ( 
+    <>
             <main className="page">
               <Header />
               {featuredData && <FeaturedMovie item={featuredData} />}
@@ -38,7 +40,10 @@ function App() {
                   }
               </section>
               <Footer />
+              
             </main>
+            <Modal />
+    </>
           );
 }
 
