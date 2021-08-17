@@ -13,6 +13,7 @@ function App() {
 
   const [homeMovieList, setHomeMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   
   useEffect(() => {
     const homeList = async() => {
@@ -42,9 +43,10 @@ function App() {
               <Footer />
               
             </main>
-            <Modal />
+            {isModalVisible && <Modal />}
     </>
           );
 }
+// https://medium.com/reactbrasil/modal-funcional-com-react-hooks-ddaf6224efa1
 
 export default App;

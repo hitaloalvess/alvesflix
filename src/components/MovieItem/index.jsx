@@ -1,25 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './style.css';
 const MovieItem = ({item}) => {
 
-   
-    const handleModal = () => {
-        console.log('ativando modal')
-       
-        const modal = document.querySelector('.modal-container');
-        document.body.style.overflow='hidden';
-
-        
-        modal.style.display = 'block'
+    const [isVisibleContent, setIsVisibleContent] = useState(false);
+    
+    const handleMouse = (flag) => {
+        setIsVisibleContent(flag);
     }
 
-    const handleMouseEnter = e => {
-        console.log(e)
-    }
     return ( 
-            <div className="movieItem" onMouseEnter={(e) => handleMouseEnter(e)}  onClick={ () => handleModal()}>
+            <div className="movieItem" onMouseEnter={ () => handleMouse(true)} onMouseOut={ () => handleMouse(false)} >
                 <img   src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={`${item.original_name}`} />
+                {isVisibleContent && <h1>CONTENT</h1>}
             </div>
     );
 }
