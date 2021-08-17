@@ -28,7 +28,7 @@ const FeaturedMovie = ({item}) => {
                         <div className="overview">{item.overview}</div>
                         <div className="buttons">
                             <button> <PlayArrowIcon style={{fontSize:20}}/> Assistir</button>
-                            <button> <AddIcon style={{fontSize:20}} /> Minha Lista</button>
+                            <button> <AddIcon style={{fontSize:20}} /> Mais informações</button>
                         </div>
                         <div className="genres">{`Gêneros: ${extractGender(item.genres)}`}</div>
                     </article>

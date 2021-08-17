@@ -8,13 +8,16 @@ import Footer from './components/Footer/index';
 import Modal from './components/Modal';
 
 import './App.css';
+import { useModal } from './providers/modal';
 
 function App() {
 
   const [homeMovieList, setHomeMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  
+  // const [isModalVisible, setIsModalVisible] = useState(false);
+  const { modal } = useModal();
+  console.log(modal)
+
   useEffect(() => {
     const homeList = async() => {
       const list = await getHomeList();
@@ -25,7 +28,6 @@ function App() {
       const itemChosen = originals[0].items.results[positionRandom];
       const itemInfo = await getMovieInfo(itemChosen.id, 'tv');
       setFeaturedData(itemInfo);
-      console.log(itemInfo);
     }
 
     homeList();
@@ -40,10 +42,10 @@ function App() {
                       <MovieRow key={index} title={movie.title} items={movie.items.results} /> )
                   }
               </section>
-              <Footer />
-              
+              <Footer /> 
             </main>
-            {isModalVisible && <Modal />}
+             {modal.visible && <Modal />}  
+      
     </>
           );
 }
