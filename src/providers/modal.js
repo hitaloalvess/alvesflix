@@ -5,7 +5,13 @@ export const ModalContext = React.createContext({});
 export const ModalProvider = (props) => {
     const [modal, setModal] = useState({
         visible:false,
-        name:''
+        position:{
+            x:0,
+            y:0,
+            width:0,
+            height:0,
+        },
+        content:{}
     });
 
     return (

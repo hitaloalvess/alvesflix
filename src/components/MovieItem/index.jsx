@@ -5,11 +5,36 @@ import { useModal } from '../../providers/modal';
 import './style.css';
 const MovieItem = ({item}) => {
 
-    const { setModal } = useModal();
+    const { modal, setModal } = useModal();
 
     const handleMouse = (e, flag) => {
         console.log('Abrindo modal');
-        setModal({visible:flag, name:''});
+        const dimensions = e.target.getBoundingClientRect();
+
+        setModal({
+            visible:flag,
+            position:{
+                x:dimensions.x,
+                y:dimensions.y,
+                width:0,
+                height:0,
+            },
+            tamanho:'',
+            content:item
+        });
+        console.log(modal)
+        setTimeout(() => {
+            setModal({
+                visible:flag,
+                position:{ x:dimensions.x,
+                           y:dimensions.y,
+                           width:dimensions.width, 
+                           height:dimensions.height},
+                tamanho:'expanded',
+                content:item
+            });
+        },500)
+
     }
 
     return ( 

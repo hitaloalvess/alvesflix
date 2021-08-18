@@ -4,17 +4,39 @@ import { useModal } from '../../providers/modal';
 import './style.css';
 const Modal = () => {
 
-    const { setModal } = useModal();
+    const {modal, setModal } = useModal();
     
     const handleMouse = (e, flag) => {
         console.log('Fechando modal');
-        setModal({visible:flag, name:''});
+        setModal({...modal,  tamanho:'fechado'});
+
+        setTimeout(() => {
+            setModal({...modal, visible:flag,
+                                position:{
+                                    x:0,
+                                    y:0,
+                                    width:0,
+                                    height:0
+                                },
+                                content:{}
+                            })
+        },300);
+
+        
     }
 
     return ( 
-        <div className="modal-container" >
-           <div className="modal-content" onMouseOut={ (e) => handleMouse(e, false)}>
-               <h1>MODAL</h1>
+        <div className={`modal-container ${modal.tamanho}`} 
+            style={{
+            top:modal.position.y,
+            left:modal.position.x,
+            width:modal.position.width, 
+            height:modal.position.height
+            }}
+            onMouseOut={ (e) => handleMouse(e, false)}
+        >
+           <div className="modal-content">
+               <h1>{modal.content.name}</h1>
            </div>
         </div>
      );

@@ -16,7 +16,7 @@ function App() {
   const [featuredData, setFeaturedData] = useState(null);
   // const [isModalVisible, setIsModalVisible] = useState(false);
   const { modal } = useModal();
-  console.log(modal)
+  // console.log(modal)
 
   useEffect(() => {
     const homeList = async() => {
