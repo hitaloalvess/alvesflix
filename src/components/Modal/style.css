@@ -16,7 +16,7 @@
 .modal-container.expanded{
     opacity: 1;
     background-color: chocolate;
-    transform: scale(2, 1.8);
+    transform: scale(3, 2.8);
 }
 
 .modal-container.fechado{

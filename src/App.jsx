@@ -14,16 +14,16 @@ function App() {
 
   const [homeMovieList, setHomeMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
-  // const [isModalVisible, setIsModalVisible] = useState(false);
   const { modal } = useModal();
-  // console.log(modal)
 
   useEffect(() => {
     const homeList = async() => {
       const list = await getHomeList();
-      setHomeMovieList(list);
-
-      const originals = list.filter(item => item.slug === "originals");
+      
+      const newList = addMediaType(list)
+      setHomeMovieList(newList);
+      
+      const originals = newList.filter(item => item.slug === "originals");
       const positionRandom = Math.round( Math.random() * (originals[0].items.results.length - 1));
       const itemChosen = originals[0].items.results[positionRandom];
       const itemInfo = await getMovieInfo(itemChosen.id, 'tv');
@@ -32,6 +32,22 @@ function App() {
 
     homeList();
   }, [])
+
+
+  const addMediaType = (list) => {
+    let newList = [];
+
+      list.forEach( array => {
+        newList.push({...array, 
+                        items:{...array.items, 
+                                results:[...array.items.results.map( item => !item.media_type ? {...item, media_type: array.type} : item )]
+                              }
+        })
+      })
+
+      return newList;
+  }
+  
   return ( 
     <>
             <main className="page">

@@ -33,10 +33,10 @@ const Modal = () => {
             width:modal.position.width, 
             height:modal.position.height
             }}
-            onMouseOut={ (e) => handleMouse(e, false)}
+            onMouseLeave={ (e) => handleMouse(e, false)}
         >
            <div className="modal-content">
-               <h1>{modal.content.name}</h1>
+               <h1>{ modal.content.original_name ? modal.content.original_name : modal.content.original_title }</h1>
            </div>
         </div>
      );
