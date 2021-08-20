@@ -9,7 +9,7 @@ const Modal = () => {
     const handleMouse = (e, flag) => {
         console.log('Fechando modal');
         setModal({...modal,  tamanho:'fechado'});
-
+        
         setTimeout(() => {
             setModal({...modal, visible:flag,
                                 position:{

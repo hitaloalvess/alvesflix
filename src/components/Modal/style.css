@@ -1,6 +1,6 @@
 .modal-container{
-    width: 0;
-    height: 0;
+    /* width: 0;
+    height: 0; */
     position: fixed;
     top: 0;
     left: 0;
@@ -16,7 +16,11 @@
 .modal-container.expanded{
     opacity: 1;
     background-color: chocolate;
-    transform: scale(3, 2.8);
+    z-index: 999;
+}
+
+.modal-container.expanded:hover{
+    transform: scale(2.5, 2);
 }
 
 .modal-container.fechado{

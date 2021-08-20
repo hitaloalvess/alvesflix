@@ -16,24 +16,12 @@ const MovieItem = ({item}) => {
             position:{
                 x:dimensions.x,
                 y:dimensions.y,
-                width:0,
-                height:0,
+                width:dimensions.width,
+                height:dimensions.height,
             },
-            tamanho:'',
+            tamanho:'expanded',
             content:item
         });
-        // console.log(modal)
-        setTimeout(() => {
-            setModal({
-                    visible:flag,
-                    position:{ x:dimensions.x,
-                            y:dimensions.y,
-                            width:dimensions.width, 
-                            height:dimensions.height},
-                    tamanho:'expanded',
-                    content:item
-                });
-            },10)
         
     }
 
