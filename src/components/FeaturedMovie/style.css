@@ -14,7 +14,7 @@
     height: inherit;
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, #111 40% , transparent 60%);
+    background: linear-gradient(to right, #111 30% , transparent 70%);
 }
 
 .featuredMovie--horizontal article{
