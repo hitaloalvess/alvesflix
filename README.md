@@ -32,6 +32,8 @@ Features:
 - Setas de rolagem para cada lista
 - Filmes divididos em categorias: romance, ação, aventura, etc.
 
+<h4 align="center"><a href="https://www.iuricode.com/">Clique para visitar o projeto</a></h4>
+
 ## ⌨ Como usar?
 
 Em primeiro lugar, clone o repositório:
